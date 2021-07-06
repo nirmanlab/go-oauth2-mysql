@@ -1,6 +1,7 @@
 package mysql
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
 	"log"
@@ -137,7 +138,7 @@ func (s *TokenStore) clean() {
 }
 
 // Create create and store the new token information
-func (s *TokenStore) Create(info oauth2.TokenInfo) error {
+func (s *TokenStore) Create(ctx context.Context, info oauth2.TokenInfo) error {
 	buf, _ := jsoniter.Marshal(info)
 	item := &TokenStoreItem{
 		Data:      string(buf),
