@@ -7,10 +7,10 @@ import (
 	"log"
 	"time"
 
+	"github.com/go-oauth2/oauth2/v4"
+	"github.com/go-oauth2/oauth2/v4/models"
 	"github.com/jmoiron/sqlx"
 	jsoniter "github.com/json-iterator/go"
-	"gopkg.in/oauth2.v3"
-	"gopkg.in/oauth2.v3/models"
 )
 
 type TokenStore struct {
